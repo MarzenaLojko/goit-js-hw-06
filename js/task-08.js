@@ -1,20 +1,24 @@
+const Myform = document.querySelector('.login-form');
 
-const Myform = document.querySelector(".login-form");
-
-const Submit = (event)=> {
+const Submit = (event) => {
   event.preventDefault();
 
   const {
     elements: { email, password },
   } = event.currentTarget;
 
-  if (email.value === "" || password.value === "") {
-    return alert("Please fill in all fields");
+  if (email.value.trim() === '') {
+    return alert('Please provide valid email');
+  } else if (password.value.trim() === '') {
+    return alert('Password cannot be empty.');
+  } else {
+    const result = {
+      email: email.value.trim(),
+      password: password.value.trim(),
+    };
+    console.log(result);
   }
-else{
-  const result = { email: email.value, password: password.value };
-  console.log(result);}
   event.currentTarget.reset();
-}
+};
 
-Myform.addEventListener("submit", Submit);
+Myform.addEventListener('submit', Submit);

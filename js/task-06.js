@@ -1,18 +1,15 @@
-
-const myInput = document.querySelector("#validation-input");
-const onBlur=(color)=> {
-  const inputColor = color.currentTarget;
-  const inputLength = Number(inputColor.dataset.length);
-  if (inputColor.value.length === inputLength) {
-    inputColor.classList.remove("invalid");
-    inputColor.classList.add("valid");
+const myInput = document.querySelector('#validation-input');
+const onBlur = (event) => {
+  const input = event.currentTarget;
+  const inputLength = Number(input.dataset.length);
+  if (input.value.length === inputLength) {
+    console.log('valid');
+    input.classList.remove('invalid');
+    input.classList.add('valid');
   } else {
-    inputColor.classList.remove("valid");
-    inputColor.classList.add("invalid");
+    console.log('invalid');
+    input.classList.remove('valid');
+    input.classList.add('invalid');
   }
-}
-myInput.addEventListener("blur", onBlur);
-
-
- //console.log(inputColor);
-  //console.log(inputLength);
+};
+myInput.addEventListener('blur', onBlur);

@@ -6,17 +6,11 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-
-
 const ingredientsList = document.getElementById('ingredients');
 
 for (let ingredient of ingredients) {
-  const ingredientEl = document.createElement('li');
-  ingredientEl.innerText = ingredient;
-  ingredientEl.classList.add("item");
-  ingredientsList.appendChild(ingredientEl);
+  const ingredientElement = document.createElement('li');
+  ingredientElement.innerText = ingredient;
+  ingredientElement.classList.add('item');
+  ingredientsList.appendChild(ingredientElement);
 }
-
-
-
-
